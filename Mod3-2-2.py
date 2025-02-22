@@ -5,6 +5,7 @@ m = [[randint(0,100)
 		for j in range(n)
 	]
 find_element = max(max(sublist)
-	for sublist in m)
+	for sublist in m
+	)
 print('Ввод данных:',m)
 print('Вывод:',find_element)
