@@ -6,5 +6,4 @@ def area(a, b, c):
 a = int(input('Первое число:'))
 b = int(input('Второе число:'))
 c = int(input('Третье число:'))
-s = area(a, b, c)
-print("Площадь треугольника:", s)
+print("Площадь треугольника:", area)
