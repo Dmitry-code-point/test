@@ -1,9 +1,10 @@
 import math
 def area(a, b, c):
-	pass
+	p = (a + b + c) / 2
+	area = math.sqrt(p * (p - a) * (p - b) * (p - c))
+	return area
 a = int(input('Первое число:'))
 b = int(input('Второе число:'))
 c = int(input('Третье число:'))
-p = (a + b + c) / 2
-s = math.sqrt(p * (p - a) * (p - b) * (p - c))
+s = area(a, b, c)
 print("Площадь треугольника:", s)
