@@ -1,11 +1,15 @@
-def sravnenie(a):
-    b = []
-    for i in a:
-        if i > 10:
-            b.append(float(i) / 10)
+from functools import cmp_to_key
+def large_number(nums):
+    nums = list(map(str, nums))
+    def compare(a, b):
+        if a + b > b + a:
+            return -1
+        elif a + b < b + a:
+            return 1
         else:
-            b.append(i)
-    return b
-a = [56, 9, 11, 2]
-n = (sorted(sravnenie(a), reverse=True))
-print(n)
+            return 0
+    nums.sort(key=cmp_to_key(compare))
+    result = ''.join(nums)
+    return result
+nums = [56, 9, 11, 2]
+print(large_number(nums))
