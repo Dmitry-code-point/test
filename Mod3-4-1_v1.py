@@ -21,8 +21,8 @@ def register():
                     print('Неверный пароль.')
             else:
                 print('Неверный логин')
-        with open('data.json', 'w',
-                  encoding='utf-8') as file:
-            json.dump(data, file, ensure_ascii=False)
+        with open('data.json', 'a',
+                  encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False)
             print('Данные записаны')
 register()
