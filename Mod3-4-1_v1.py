@@ -11,6 +11,12 @@ def register():
                 passwd = input('Введите пароль:')
                 print('Регистрация завершина')
                 data[login] = passwd
+        elif action == 'Вход':
+            login = input('Введите логин: ').strip()
+            if login in data.keys():
+                passwd = input('Введите пароль:')
+                if passwd in data.keys():
+                    print('Вход выполнен.')
         with open('data.json', 'w',
                   encoding='utf-8') as file:
             json.dump(data, file, ensure_ascii=False)
