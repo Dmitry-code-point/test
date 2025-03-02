@@ -17,6 +17,10 @@ def register():
                 passwd = input('Введите пароль:')
                 if passwd in data.keys():
                     print('Вход выполнен.')
+                else:
+                    print('Неверный пароль.')
+            else:
+                print('Неверный логин')
         with open('data.json', 'w',
                   encoding='utf-8') as file:
             json.dump(data, file, ensure_ascii=False)
