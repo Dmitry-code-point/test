@@ -3,7 +3,7 @@ def register():
     data={}
     while True:
         action = input('Регистрация пользователя или Вход: ')
-        if action == 'Регистрация'
+        if action == 'Регистрация':
             login = input('Введите логин: ').strip()
             if login in data.keys():
                 print('Логин занят')
