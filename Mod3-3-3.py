@@ -8,7 +8,7 @@ def large_number(nums):
             return 1
         else:
             return 0
-    nums.sort(large_number(nums))
+    nums.sort(key=cmp_to_key(compare))
     result = ''.join(nums)
     return result
 nums = [56, 9, 11, 2]
