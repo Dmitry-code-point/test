@@ -1,6 +1,6 @@
 import json
 def register():
-    data={}
+    data = {}
     while True:
         action = input('Регистрация пользователя или Вход: ')
         if action == 'Регистрация':
@@ -11,6 +11,9 @@ def register():
                 passwd = input('Введите пароль:')
                 print('Регистрация завершина')
                 data[login] = passwd
+                with open('data.json', 'w') as file:
+                    json.dump(data, file, ensure_ascii=False)
+                print('Данные записаны')
         elif action == 'Вход':
             login = input('Введите логин: ').strip()
             if login in data.keys():
@@ -20,9 +23,7 @@ def register():
                 else:
                     print('Неверный пароль.')
             else:
-                print('Неверный логин')
-        with open('data.json', 'a',
-                  encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False)
-            print('Данные записаны')
+                print('Такого пользователя не существует.')
+        else:
+            print('Регистрация пользователя или Вход: ')
 register()
