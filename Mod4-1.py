@@ -1,7 +1,8 @@
 from random import randint
 
 n = 10
-numbers = [randint(0,100) for i in range(n)]
+numbers = [randint(0,100) \
+           for i in range(n)]
 
 def merge_sort(numbers):
     if len(numbers) < 2:
