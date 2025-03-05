@@ -1,15 +1,15 @@
-from heapq import merge
-from statistics import median
+from random import randint
 
-numbers = [3, 5, 2, 7, 6, 9, 1]
-print(numbers)
+n = 10
+numbers = [randint(0,100) for i in range(n)]
+
 def merge_sort(numbers):
     if len(numbers) < 2:
         return numbers[:]
     else:
         median = int(len(numbers) / 2)
         left = merge_sort(numbers[:median])
-        right = merge_sort(numbers[:median])
+        right = merge_sort(numbers[median:])
         return merge(left, right)
 
 def merge(left, right):
