@@ -1,10 +1,10 @@
-\from random import randint
+from random import randint
 
 n = 10
 numbers = [randint(1, 100) \
            for i in range(n)]
 
-def insert_sort(numbers):
+def comparison(numbers):
     for i in range(1, len(numbers)):
         num = numbers[i]
         j = i - 1
@@ -13,4 +13,4 @@ def insert_sort(numbers):
             j -= 1
             numbers[j + 1]= num
     return numbers
-print(insert_sort(numbers))
+print(comparison(numbers))
