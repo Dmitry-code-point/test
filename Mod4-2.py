@@ -1,4 +1,4 @@
-from random import randint
+\from random import randint
 
 n = 10
 numbers = [randint(1, 100) \

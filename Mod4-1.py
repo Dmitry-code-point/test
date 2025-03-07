@@ -4,16 +4,16 @@ n = 10
 numbers = [randint(0,100) \
            for i in range(n)]
 
-def merge_sort(numbers):
+def half_division(numbers):
     if len(numbers) < 2:
         return numbers[:]
     else:
         median = int(len(numbers) / 2)
-        left = merge_sort(numbers[:median])
-        right = merge_sort(numbers[median:])
-        return merge(left, right)
+        left = half_division(numbers[:median])
+        right = half_division(numbers[median:])
+        return comparison(left, right)
 
-def merge(left, right):
+def comparison(left, right):
     res = []
     i, j = 0, 0
     while i < len(left) and j < len(right):
@@ -30,5 +30,5 @@ def merge(left, right):
         res.append(right[j])
         j += 1
     return res
-print(merge_sort(numbers))
+print(half_division(numbers))
 
