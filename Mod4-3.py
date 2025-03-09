@@ -13,10 +13,9 @@ def bfs(graph, start, target=[]):
     visited= set()
     queue = deque([(start, [start])])
     while queue:
-        top = queue.popleft()
-        way = queue.popleft()
+        (top, way) = queue.popleft()
         if top == target:
-            return top
+            return queue
         if top not in visited:
             visited.add(top)
             for neighbor in graph[top]:
@@ -24,7 +23,7 @@ def bfs(graph, start, target=[]):
     return None
 
 start = '2'
-target = '7'
+target = '5'
 way = bfs(graph, start, target)
 
 if way:
