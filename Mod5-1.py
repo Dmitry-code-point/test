@@ -1,11 +1,11 @@
 class StringVar:
 
     def word(self):
-        self.words = ""
+        self.word = ""
     def set(self, list_words):
-        self.words = list_words
+        self.word = list_words
     def get(self):
-        return self.words
+        return self.word
 
 while True:
     a = StringVar()
