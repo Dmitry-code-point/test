@@ -3,9 +3,6 @@ import math
 
 class Point:
 
-    old_x = 0
-    old_y = 0
-
     def coordinate_old_x(self, old_x):
         self.old_x = float(old_x)
 
