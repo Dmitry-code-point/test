@@ -16,7 +16,7 @@ class Point:
         self.tilt = float(tilt)
 
     def get(self):
-        print(f"Координаты  первой точки: {self.old_x}:{self.old_y}")
+        print(f"Координаты начальной точки: {self.old_x}:{self.old_y}")
 
     def change_vector_x(self):
         return (self.old_x + self.vector)* math.cos(self.tilt)
