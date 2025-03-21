@@ -33,4 +33,4 @@ while True:
     a.tilt(input('Введите градус переноса точки: '))
     new_x = a.change_vector_x()
     new_y = a.change_vector_y()
-    print(f"Новые координаты перенесенной точки на расстояние: [{new_x}:{new_y}]")
+    print(f"Новые координаты перенесенной точки: [{new_x}:{new_y}]")
