@@ -1,31 +1,25 @@
 import math
 
 
+select_vector = float(input("Введите число: "))
+select_tilt = float(input("Введите градус угла: "))
+
 class Point:
 
     def __init__(self, list_x, list_y):
         self.x = float(list_x)
         self.y = float(list_y)
 
-    def select_vector(self, list_vector):
-        self.vector = float(list_vector)
-
-    def select_tilt(self, list_tilt):
-        self.tilt = float(list_tilt)
-
-
     def distance(self, other_point):
-        return math.sqrt(abs(self.x  - other_point.x) ** 2 + (self.y - other_point.y) ** 2)
+        return math.sqrt(abs(self.x - other_point.x) ** 2 + (self.y - other_point.y) ** 2)
 
-    def change_vector(self):
-        return ((self.x + self.vector) * math.cos(self.tilt),
-                (self.y + self.vector) * math.sin(self.tilt))
+def change_vector(point_p):
+    return ((point_p.x + select_vector) * math.cos(select_tilt),
+            (point_p.y + select_vector) * math.sin(select_tilt))
 
 p1 = Point(5,3)
 p2 = Point(2,3)
-p1.select_vector(input('Введите длину переноса точки: '))
-p1.select_tilt(input('Введите градус переноса точки: '))
 distance_points = p1.distance(p2)
+change_point = change_vector(p1)
 print(f"Расстояние между точками: {distance_points}")
-change_point = p1.change_vector()
 print(f"Новые координаты перенесенной точки: {change_point}")
