@@ -14,12 +14,11 @@ class Warrior:
 
 def battle(unit_1, unit_2):
     while unit_1.health > 0 and unit_2.health > 0:
-        units = [unit_1, unit_2]
-        attack_unit = random.choice(units)
-        if attack_unit == unit_1:
-            attack_unit.attacks(unit_2)
+        action = random.choice(['unit_1' , 'unit_2'])
+        if action == "unit_1":
+            unit_1.attacks(unit_2)
         else:
-            attack_unit.attacks(unit_1)
+            unit_2.attacks(unit_1)
     if unit_1.health > 0:
         print("Побеждает unit_1")
     else:
