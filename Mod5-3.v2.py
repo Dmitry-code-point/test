@@ -9,6 +9,9 @@ class Warrior:
         self.armor = 100
 
     def attacks(self, other):
+        return self.get_hit(other)
+
+    def get_hit(self, other):
         if other.armor > 0 and other.endurance > 0:
             other.health -= random.randint(0, 20)
             other.armor -= random.randint(0, 10)
