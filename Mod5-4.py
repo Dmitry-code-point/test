@@ -13,12 +13,12 @@ class Model:
         with open('words.json', 'r') as file:
             data_words = json.load(file)
             data_words1 = list(filter(lambda item: not item.startswith('_'), data_words)) # Избавление  от служеюных аттрибут
-            data_words3 = []
+            data_words2 = []
             for item in data_words1:
                 if item in words:
-                    data_words3.append(item)
+                    data_words2.append(item)
             print(data_words) # Вывод задания IN 2 - OUT 2
-            print (data_words3)
+            print (data_words2)
 
 
 model = Model()
