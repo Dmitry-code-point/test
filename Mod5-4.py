@@ -2,20 +2,18 @@ import json
 
 class Model:
     def save_to_file(self, words):
-        attributes = dir(words)
-        word_keys = list(words.keys())
-        combined_attribute = attributes + word_keys
+        attributes = dir(words) + list(words.keys())
         with open('words.json', 'w') as file:
-            json.dump(combined_attribute, file, ensure_ascii=False)
+            json.dump(attributes, file, ensure_ascii=False)
 
     def open_file(self):
         with open('words.json', 'r') as file:
-            data_words = json.load(file)
-            print(data_words) # Вывод задания IN 2 - OUT 2
-            return self.get_attribute(data_words)
+            data_attributes = json.load(file)
+            print(data_attributes) # Вывод задания IN 2 - OUT 2
+            return self.get_attribute(data_attributes)
 
-    def get_attribute(self, data):
-        data_words1 = list(filter(lambda item: not item.startswith('_'), data)) # Избавление  от служеюных аттрибут
+    def get_attribute(self, data_words):
+        data_words1 = list(filter(lambda item: not item.startswith('_'), data_words)) # Избавление  от служеюных аттрибут
         data_words2 = []
         for item in data_words1:
             if item in words:
