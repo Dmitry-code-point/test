@@ -18,8 +18,7 @@ class Model:
             return self.get_attribute(data_attributes)
 
     def get_attribute(self, data_words):
-        data_words1 = list(
-            filter(lambda item: not item.startswith('_'), data_words))  # Избавление  от служеюных аттрибут
+        data_words1 = list(filter(lambda item: not item.startswith('_'), data_words))  # Избавление  от служеюных аттрибут
         name_functions = ['save_to_file', 'open_file', 'get_attribute']
         attributes = []
         for item in data_words1:
