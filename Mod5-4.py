@@ -17,7 +17,6 @@ class Model:
                 attributes.append(item)
         return self.save_to_file(attributes)
 
-
     def save_to_file(self,old_attributes):
         new_attributes = old_attributes
         with open('words.json', 'w') as file:
