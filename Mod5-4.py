@@ -6,27 +6,29 @@ class Model:
         self.text = text
         self.author = author
 
-    def save_to_file(self):
+    def get_attribute(self):
         all_attributes = dir(self)
+        print(all_attributes) # Вывод задания IN 2 - OUT 2
+        need_attributes = list(filter(lambda item: not item.startswith('_'), all_attributes))  # Избавление  от служеюных аттрибут
+        name_functions = ['save_to_file', 'open_file', 'get_attribute']
+        attributes = []
+        for item in need_attributes:
+            if item not in name_functions:
+                attributes.append(item)
+        return self.save_to_file(attributes)
+
+
+    def save_to_file(self,old_attributes):
+        new_attributes = old_attributes
         with open('words.json', 'w') as file:
-            json.dump(all_attributes, file, ensure_ascii=False)
+            json.dump(new_attributes, file, ensure_ascii=False)
 
     def open_file(self):
         with open('words.json', 'r') as file:
             data_attributes = json.load(file)
-            print(data_attributes)  # Вывод задания IN 2 - OUT 2
-            return self.get_attribute(data_attributes)
-
-    def get_attribute(self, data_words):
-        data_words1 = list(filter(lambda item: not item.startswith('_'), data_words))  # Избавление  от служеюных аттрибут
-        name_functions = ['save_to_file', 'open_file', 'get_attribute']
-        attributes = []
-        for item in data_words1:
-            if item not in name_functions:
-                attributes.append(item)
-        print(attributes)
+            print(data_attributes)
 
 m = Model(1, 2, 3)
-m.save_to_file()
+m.get_attribute()
 m.open_file()
 
