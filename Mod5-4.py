@@ -8,7 +8,7 @@ class Model:
 
     def get_attribute(self):
         all_attributes = dir(self)
-        print(all_attributes) # Вывод задания IN 2 - OUT 2
+        #print(all_attributes) # Вывод задания IN 2 - OUT 2
         need_attributes = list(filter(lambda item: not item.startswith('_'), all_attributes))  # Избавление  от служеюных аттрибут
         name_functions = ['save_to_file', 'open_file', 'get_attribute']
         attributes = []
@@ -25,10 +25,9 @@ class Model:
 
     def open_file(self):
         with open('words.json', 'r') as file:
-            data_attributes = json.load(file)
-            print(data_attributes)
-
+            return json.load(file)
+        
 m = Model(1, 2, 3)
 m.get_attribute()
-m.open_file()
-
+load_data = m.open_file()
+print(load_data)
