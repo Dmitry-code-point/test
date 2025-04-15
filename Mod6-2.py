@@ -1,5 +1,6 @@
 import time
 from threading import Thread
+from datetime import datetime
 
 
 def get_thread(item):
@@ -8,6 +9,7 @@ def get_thread(item):
 
 
 names = ['Name1', 'Name2', 'Name3', 'Name4', 'Name5']
+t1 = datetime.now()
 
 # for item in names:
 #     get_thread(item)
@@ -19,3 +21,5 @@ for t in threads:
 
 for t in threads:
     t.join()
+
+print('Затраченное время:', (datetime.now()- t1).microseconds)
