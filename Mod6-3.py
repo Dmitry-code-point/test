@@ -27,5 +27,5 @@ for t in threads:
 
 time_parallel = (datetime.now()- t2).microseconds
 
-print('Затраченое время при последовательном:', time_consistent,
-      'Затраченое время при паралельном', time_parallel)
+print('\nЗатраченое время при последовательном:', time_consistent,
+      '\nЗатраченое время при паралельном', time_parallel)
