@@ -11,9 +11,11 @@ def get_thread(item):
 names = ['Name1', 'Name2', 'Name3', 'Name4', 'Name5']
 t1 = datetime.now()
 
-# for item in names:
-#     get_thread(item)
+for item in names:
+    get_thread(item)
+time_consistent = (datetime.now()- t1).total_seconds()
 
+t2 = datetime.now()
 threads = [Thread(target=get_thread, args=(item, )) for item in names]
 
 for t in threads:
@@ -22,4 +24,7 @@ for t in threads:
 for t in threads:
     t.join()
 
-print('Затраченное время:', (datetime.now()- t1).microseconds)
+time_parallel = (datetime.now()- t2).total_seconds()
+
+print('\nЗатраченое время при последовательном:', time_consistent,
+      '\nЗатраченое время при паралельном', time_parallel)
