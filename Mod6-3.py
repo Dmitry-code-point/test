@@ -9,7 +9,11 @@ def get_html(item):
     response = requests.get(item)
     return print(response.text)
 
-html_name = ['https://yandex.ru', 'https://google.com', 'https://ru.wikipedia.org', 'https://dzen.ru/?yredirect=true', 'https://mail.ru/']
+html_name = ['https://yandex.ru',
+             'https://google.com',
+             'https://ru.wikipedia.org',
+             'https://dzen.ru/?yredirect=true',
+             'https://mail.ru/']
 t1 = datetime.now()
 
 for name in html_name:
